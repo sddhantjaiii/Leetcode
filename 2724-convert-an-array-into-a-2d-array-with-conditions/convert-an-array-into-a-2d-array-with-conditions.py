@@ -4,7 +4,6 @@ class Solution:
         c=[]
         while len(nums)>0:
             for i in nums:
-                print(i)
                 if i not in j:
                     j.append(i)                    
             for k in j:
