@@ -5,12 +5,9 @@ class Solution:
             k=0
             for j in pref:
                 if len(pref)<=len(i):
-                    if i[k]==j:
-                        
+                    if i[k]==j:  
                         k+=1
-            print(c,k,len(pref))
             if k==len(pref):
                 c+=1
-                print(i,j,c)
         return c
             
