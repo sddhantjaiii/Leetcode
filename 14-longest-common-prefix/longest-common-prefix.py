@@ -12,7 +12,6 @@ class Solution:
             for j in range(len(strs)-1):
                 if strs[j][i]==strs[j+1][i]:
                     k+=1
-                    print(k,strs[j][i])
             if k==len(strs)-1:
                 f.append(strs[j][i])
                 k=0
