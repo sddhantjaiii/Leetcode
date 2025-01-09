@@ -7,6 +7,8 @@ class Solution:
                 if len(pref)<=len(i):
                     if i[k]==j:  
                         k+=1
+                    else:
+                        break
             if k==len(pref):
                 c+=1
         return c
