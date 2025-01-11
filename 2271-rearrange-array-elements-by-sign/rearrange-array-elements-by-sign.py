@@ -9,9 +9,8 @@ class Solution:
                 pos.append(i)
             else:
                 neg.append(i)
-        while k< min(len(pos),len(neg)):
+        while k< len(neg):
             f.append(pos[k])
             f.append(neg[k])
             k+=1
-        print(f)
         return f
