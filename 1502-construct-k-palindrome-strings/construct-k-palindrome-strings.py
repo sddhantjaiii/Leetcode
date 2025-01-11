@@ -4,7 +4,6 @@ class Solution:
             return False
 
         c = Counter(s)
-        print(c)
         oc = 0
         for char, count in c.items():
             if count % 2 == 1:  
