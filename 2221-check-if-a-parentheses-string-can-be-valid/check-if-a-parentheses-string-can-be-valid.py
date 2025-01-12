@@ -7,7 +7,6 @@ class Solution:
         a=0
         o1=0
         a1=0
-
         for i in range(k+1):
             if locked[i]=="1":
                 if s[i]=="(":
