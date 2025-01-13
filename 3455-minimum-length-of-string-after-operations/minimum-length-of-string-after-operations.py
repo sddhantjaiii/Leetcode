@@ -9,13 +9,11 @@ class Solution:
         
         l=len(s)
         c=Counter(s)
-        print(c)
         x=0
         for key, value in c.items():
             while(value>=3):
                 value-=2
             x+=value
-        print(x)
         return x
 
 
