@@ -12,5 +12,4 @@ class Solution:
                     l.append(i)
                 else:
                     maxx = max(maxx, i - l[-1])
-
         return maxx
