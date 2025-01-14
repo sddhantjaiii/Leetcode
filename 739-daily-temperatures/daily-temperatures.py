@@ -1,15 +1,15 @@
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        stack = []  # Stack to store indices
-        result = [0] * len(temperatures)  # Initialize result array
+        t=temperatures
+        l=len(t)
+        s = []
+        result = [0]*l
         
-        for i, temp in enumerate(temperatures):
-            # While the stack is not empty and the current temperature is greater than the stack's top temperature
-            while stack and temperatures[stack[-1]] < temp:
-                index = stack.pop()  # Pop the index from the stack
-                result[index] = i - index  # Calculate the difference in days
+        for i, temp in enumerate(t):
             
-            # Push the current index onto the stack
-            stack.append(i)
+            while len(s)>0 and t[s[-1]] < temp:
+                index = s.pop() 
+                result[index] = i - index 
+            s.append(i)
         
         return result
