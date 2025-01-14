@@ -1,22 +1,19 @@
 class Solution:
     def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
-        seen = set()  # To track elements seen so far
-        count = 0  # To count common elements
-        result = []
+        d=[]
+        x=0
+        for i in range(len(A)):
+            p1=A[:i+1]
+            p2=B[:i+1]
+            p1=set(p1)
+            p2=set(p2)
+            for j in p1:
+                if j in p2:
+                    x+=1
+            d.append(x)
+            x=0
+        return d
+            
 
-        for a, b in zip(A, B):
-            # Add current elements from both arrays to the seen set
-            if a in seen:
-                count += 1
-            else:
-                seen.add(a)
-
-            if b in seen:
-                count += 1
-            else:
-                seen.add(b)
-
-            # Append the count of common elements so far
-            result.append(count)
-
-        return result
+            
+        
