@@ -9,7 +9,7 @@ class Solution:
                 stack.pop()
                 count += 1
             if stack:
-                count += 1  # The person sees the next taller person in the stack.
+                count += 1 
             result[i] = count
             stack.append(heights[i])
         
