@@ -7,7 +7,7 @@ class Solution:
         cc=c["1"]
         cc1=c1["1"]
         x=[]
-        print(cc1,cc)
+        
         for i in range(len(b1)-1,-1,-1):
             if cc1 > cc:
                 q=cc1-cc
@@ -21,13 +21,11 @@ class Solution:
                     cc-=1
             if cc==cc1:
                 break
-        print(b1,i)
         while cc>0 and cc!= cc1:
             x.append("1")
             cc-=1
         f=x+b1
         nn = int(''.join(map(str,f)),2)
-        print(nn)
         return nn
         
 
