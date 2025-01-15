@@ -7,7 +7,6 @@ class Solution:
         cc=c["1"]
         cc1=c1["1"]
         x=[]
-        
         for i in range(len(b1)-1,-1,-1):
             if cc1 > cc:
                 q=cc1-cc
