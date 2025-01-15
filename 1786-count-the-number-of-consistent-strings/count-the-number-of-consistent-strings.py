@@ -5,7 +5,7 @@ class Solution:
         for i in words:  
             for j in i:
                 if j not in allowed:
+                    c+=1
                     break
-            else:
-                c+=1 
-        return c
+            
+        return len(words)-c
