@@ -7,5 +7,4 @@ class Solution:
                 if j not in allowed:
                     c+=1
                     break
-            
         return len(words)-c
