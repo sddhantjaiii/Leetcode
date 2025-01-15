@@ -3,7 +3,6 @@ class Solution:
         c=0
         allowed=set(allowed)
         for i in words:  
-            i=set(i)
             for j in i:
                 if j not in allowed:
                     break
