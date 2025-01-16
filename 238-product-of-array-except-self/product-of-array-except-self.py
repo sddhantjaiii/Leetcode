@@ -9,9 +9,10 @@ class Solution:
             f*=i
         f=1
         for j in range(u - 1, -1, -1):
-            s[j] = f
-            f *= nums[j]
+            t=nums[j]
+            nums[j] = f
+            f *= t
         for i in range(u):
-            nums[i]=p[i]*s[i]
+            nums[i]=p[i]*nums[i]
         print(p,s)
         return nums
