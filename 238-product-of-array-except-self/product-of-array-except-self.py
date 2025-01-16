@@ -4,15 +4,14 @@ class Solution:
         p=[]
         s=[1]*len(nums)
         f=1
+        r=[1]*u
         for i in nums:
             p.append(f)
             f*=i
         f=1
         for j in range(u - 1, -1, -1):
-            t=nums[j]
-            nums[j] = f
-            f *= t
-        for i in range(u):
-            nums[i]=p[i]*nums[i]
-        print(p,s)
-        return nums
+            s[j] = f
+            r[j] = p[j] * s[j]
+            f *= nums[j]
+        
+        return r
