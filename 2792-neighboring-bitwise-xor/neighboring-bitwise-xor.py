@@ -2,11 +2,12 @@ class Solution:
     def doesValidArrayExist(self, derived: List[int]) -> bool:
         l=len(derived)
         o=[0]*l
-        for i in range(l-1):
-            o[i+1]=o[i]^derived[i]
         o1=[1]*l
         for i in range(l-1):
+            o[i+1]=o[i]^derived[i]
             o1[i+1]=o1[i]^derived[i]
+        
+        
         x,x1=[0]*l,[0]*l
         for i in range(l):
             if i==l-1:
