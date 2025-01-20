@@ -1,25 +1,23 @@
 class Solution:
     def firstCompleteIndex(self, arr: List[int], mat: List[List[int]]) -> int:
-        num_rows, num_cols = len(mat), len(mat[0])
-        row_count, col_count = [0] * num_rows, [0] * num_cols
-        num_to_pos = {}
+        r, c = len(mat), len(mat[0])
+        row_count = [0] * r  # Tracks the number of "visited" elements in each row
+        col_count = [0] * c  # Tracks the number of "visited" elements in each column
+        value_to_position = {}  # Maps value to its position (row, col) in the matrix
 
-        # Create a map to store the position of each number in the matrix
-        for row in range(num_rows):
-            for col in range(num_cols):
-                num_to_pos[mat[row][col]] = [row, col]
+        # Precompute the mapping of values to their positions
+        for i in range(r):
+            for j in range(c):
+                value_to_position[mat[i][j]] = (i, j)
 
-        for i in range(len(arr)):
-            num = arr[i]
-            row, col = num_to_pos[num]
+        # Process each value in the array
+        for i, value in enumerate(arr):
+            rr, cc = value_to_position[value]
+            row_count[rr] += 1
+            col_count[cc] += 1
 
-            # Increment the count for the corresponding row and column
-            row_count[row] += 1
-            col_count[col] += 1
-
-            # Check if the row or column is completely painted
-            if row_count[row] == num_cols or col_count[col] == num_rows:
+            # Check if the row or column is complete
+            if row_count[rr] == c or col_count[cc] == r:
                 return i
 
-        # This line will never be reached as per the problem statement
-        return -1
+        return -1  # This should never be reached if input guarantees a solution
