@@ -14,7 +14,6 @@ class Solution:
         for j in range(cx):
             x=0
             for q in range(r):
-                
                 if grid[q][j]==1:
                     x+=1
             if x>=2:
