@@ -1,28 +1,30 @@
 class Solution:
     def countServers(self, grid: List[List[int]]) -> int:
-        communicable_servers_count = 0
-        row_counts = [0] * len(grid[0])
-        last_server_in_col = [-1] * len(grid)
+        
+        r=len(grid)
+        cx=len(grid[0])
+        rc=[-1]*r
+        cc=[-1]*cx
+        k=0
+        for i in grid:
+            c=Counter(i)
+            if c[1]>=2:
+                rc[k]=c[1]
+            k+=1
+        for j in range(cx):
+            x=0
+            for q in range(r):
+                
+                if grid[q][j]==1:
+                    x+=1
+            if x>=2:
+                cc[j]=x
+        f=0
+        for i in range(r):
+            for j in range(cx):
+                if grid[i][j]==1 and (rc[i]>1 or cc[j]>1):
+                    f+=1
+        return f
 
-        # First pass to count servers in each row and column
-        for row in range(len(grid)):
-            server_count_in_row = 0
-            for col in range(len(grid[0])):
-                if grid[row][col]:
-                    server_count_in_row += 1
-                    row_counts[col] += 1
-                    last_server_in_col[row] = col
 
-            # If there is more than one server in the row, increase the count
-            if server_count_in_row != 1:
-                communicable_servers_count += server_count_in_row
-                last_server_in_col[row] = -1
 
-        # Second pass to check if servers can communicate
-        for row in range(len(grid)):
-            if (
-                last_server_in_col[row] != -1
-                and row_counts[last_server_in_col[row]] > 1
-            ):
-                communicable_servers_count += 1
-        return communicable_servers_count
