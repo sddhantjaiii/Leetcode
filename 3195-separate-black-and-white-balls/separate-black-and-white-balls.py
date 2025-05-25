@@ -6,9 +6,8 @@ class Solution:
                 b=i
                 break
         c=0
-        for i in range(len(s)-1,-1,-1):
-            if i>b:
-                continue
+        for i in range(b,-1,-1):
+            
             if s[i]=="1":
                 c+=b-i
                 b-=1
