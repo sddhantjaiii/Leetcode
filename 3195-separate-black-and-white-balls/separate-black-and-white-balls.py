@@ -6,13 +6,11 @@ class Solution:
                 b=i
                 break
         c=0
-        x=-1
         for i in range(len(s)-1,-1,-1):
             if i>b:
                 continue
             if s[i]=="1":
                 c+=b-i
                 b-=1
-        
         return c
             
