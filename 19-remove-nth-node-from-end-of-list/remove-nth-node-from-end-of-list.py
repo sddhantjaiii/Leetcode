@@ -13,14 +13,12 @@ class Solution:
             l+=1
             
         c=1
-        if l==1:
-            return head.next
+        
         if l==n:
             return head.next
         while c<l-n:
             curr=curr.next
             c+=1
         curr.next=curr.next.next
-        cur=head
         
         return head        
