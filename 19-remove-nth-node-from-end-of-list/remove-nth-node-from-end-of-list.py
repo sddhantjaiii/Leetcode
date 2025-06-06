@@ -24,6 +24,5 @@ class Solution:
         curr.next=curr.next.next
         cur=head
         while cur:
-            print(cur.val)
             cur=cur.next
         return head        
