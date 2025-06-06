@@ -22,6 +22,5 @@ class Solution:
             c+=1
         curr.next=curr.next.next
         cur=head
-        while cur:
-            cur=cur.next
+        
         return head        
