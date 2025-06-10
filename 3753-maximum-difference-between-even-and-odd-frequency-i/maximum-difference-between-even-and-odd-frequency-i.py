@@ -6,6 +6,7 @@ class Solution:
         even=float('inf')
         
         for v,key in c.items():
+            print(key)
             if key%2 !=0:
                 odd=max(odd,key)
             else:
