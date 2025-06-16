@@ -7,6 +7,5 @@ class Solution:
                 temp.append(nums[i])
         nt = len(temp)
         nums[:]=temp+[0]*(n-nt)
-
         return temp
             
