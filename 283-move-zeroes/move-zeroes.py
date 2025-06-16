@@ -1,14 +1,14 @@
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        i=0
-        l=len(nums)
-        while i < l:
-            if nums[i]==0:
-                nums[:]=nums[:i]+nums[i+1:]+nums[i:i+1]
-                l-=1
-                continue
-            i+=1
+        n = len(nums)
+        temp = []
+        for i in range (0,n):
+            if nums[i] != 0:
+                temp.append(nums[i])
+        nt = len(temp)
+        for i in range (0,nt):
+            nums[i] = temp[i]
+        for i in range (nt,n):
+            nums[i]=0
+
             
