@@ -18,9 +18,7 @@ class Solution:
             if m1>m and m>nums[i-1]:
                 m1=m
                 x=j
-                print(m,m1,nums[i-1])
         nums[i-1],nums[x]=nums[x],nums[i-1]
-        print(nums[:i],nums[l-1:i-1:-1])
         nums[:]=nums[:i]+nums[l-1:i-1:-1]
         if x==-1:
             return nums.sort()
