@@ -13,8 +13,7 @@ class Solution:
             x= heapq.heappop(nums)
             if x-prev==1:
                 c+=1
-            elif x==prev:
-                continue
+            
             else:
                 m=max(c,m)
                 c=1
