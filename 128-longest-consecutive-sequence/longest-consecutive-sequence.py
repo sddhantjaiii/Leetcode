@@ -9,7 +9,6 @@ class Solution:
         prev=heapq.heappop(nums)
         for i in range(l-1):
             x= heapq.heappop(nums)
-            print(m,c,i,x)
             if x-prev==1:
                 c+=1
             elif x==prev:
