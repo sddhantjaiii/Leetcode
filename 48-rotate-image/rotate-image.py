@@ -7,7 +7,7 @@ class Solution:
         r=len(matrix)
         c=len(matrix[0])
         for i in range(r):
-            for j in range(c):
+            for j in range(i,c):
                 if i>j:
                     continue
                 matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
