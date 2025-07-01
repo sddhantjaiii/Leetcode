@@ -24,7 +24,6 @@ class Solution:
             for i in range(4):
                 nrow=r+drow[i]
                 ncol=c+dcol[i]
-                
                 if nrow>=0 and nrow<m and ncol>=0 and ncol<n and vis[nrow][ncol]!=2 and grid[nrow][ncol]==1:
                     q.append([[nrow,ncol],t+1])
                     vis[nrow][ncol]=2
