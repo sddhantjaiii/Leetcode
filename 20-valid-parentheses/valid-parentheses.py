@@ -3,7 +3,6 @@ from collections import deque
 class Solution:
     def isValid(self, s: str) -> bool:
         stack=deque()
-        c=0
         
         for i in s:
             if i=="(" or i=="{" or i=="[":
