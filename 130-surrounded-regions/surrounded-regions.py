@@ -8,7 +8,6 @@ class Solution:
         vis=[[0 for __ in range(n)] for __ in range(m)]
         def dfs(vis,i,j):
             vis[i][j]=1
-            print("hi")
             drow=[0,1,0,-1]
             dcol=[1,0,-1,0]
 
