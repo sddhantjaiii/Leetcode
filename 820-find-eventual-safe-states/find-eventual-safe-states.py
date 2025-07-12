@@ -1,32 +1,30 @@
+from collections import deque
 class Solution:
-    def dfs(self, node, adj, visit, inStack):
-        # If the node is already in the stack, we have a cycle.
-        if inStack[node]:
-            return True
-        if visit[node]:
-            return False
-        # Mark the current node as visited and part of current recursion stack.
-        visit[node] = True
-        inStack[node] = True
-        for neighbor in adj[node]:
-            if self.dfs(neighbor, adj, visit, inStack):
-                return True
-        # Remove the node from the stack.
-        inStack[node] = False
-        return False
-
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-        n = len(graph)
+        l=len(graph)
+        adjrev=[[] for _ in range(l)]
+        indegree=[0 for __ in range(l)]
+        for i in range(l):
+            for j in graph[i]:
+                adjrev[j].append(i)
+                indegree[i]+=1
+        q=deque()
+        for i in range(l):
+            if indegree[i]==0:
+                q.append(i)
+        safe=[]
+        while q:
+            x=q[0]
+            q.popleft()
+            safe.append(x)
+            for i in adjrev[x]:
+                indegree[i]-=1
+                if indegree[i]==0:
+                    q.append(i)
+        safe.sort()
+        return safe
 
-        visit = [False] * n
-        inStack = [False] * n
 
-        for i in range(n):
-            self.dfs(i, graph, visit, inStack)
 
-        safeNodes = []
-        for i in range(n):
-            if not inStack[i]:
-                safeNodes.append(i)
 
-        return safeNodes
+        
