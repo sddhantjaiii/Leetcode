@@ -21,9 +21,6 @@ class Solution:
                 if i==j:
                     i+=1
                     break
-                if  i==x or j==x:
-                    break
-                
                 check=n[i]+n[j]+qx
                 prev=mm
                 mm=min(mm,abs(check-target))
