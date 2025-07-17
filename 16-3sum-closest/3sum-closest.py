@@ -7,7 +7,6 @@ class Solution:
         i=0
         j=l-1
         s=0
-        print(n)
         mm= float('inf')
         for x in range(l-2):
             qx=n[x]
