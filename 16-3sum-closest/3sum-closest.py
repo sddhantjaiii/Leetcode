@@ -12,9 +12,7 @@ class Solution:
             qx=n[x]
             i=x+1
             j=l-1
-            c=0
-            while c<l:
-                c+=1
+            while i<j:
                 if i>=l:
                     break
                 if i==j:
