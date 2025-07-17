@@ -20,7 +20,7 @@ class Solution:
                     break
                 if i==j:
                     i+=1
-                    continue
+                    break
                 if  i==x or j==x:
                     break
                 
