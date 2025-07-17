@@ -13,11 +13,6 @@ class Solution:
             i=x+1
             j=l-1
             while i<j:
-                if i>=l:
-                    break
-                if i==j:
-                    i+=1
-                    break
                 check=n[i]+n[j]+qx
                 prev=mm
                 mm=min(mm,abs(check-target))
