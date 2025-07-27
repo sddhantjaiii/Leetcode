@@ -14,6 +14,5 @@ class Solution:
             
             if nums[i-1]>nums[i]<nums[i+1] or nums[i-1]<nums[i]>nums[i+1]:
                 c+=1 
-        print(nums,c)
         return c
             
