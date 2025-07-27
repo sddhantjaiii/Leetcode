@@ -17,6 +17,5 @@ class Solution:
             if  prev>nums[i]<nums[i+1] or prev<nums[i]>nums[i+1]:
                 c+=1 
             prev=nums[i]
-            print(nums[i],prev,c)
         return c
             
