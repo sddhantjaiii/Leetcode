@@ -1,6 +1,5 @@
 class Solution:
     def countHillValley(self, nums: List[int]) -> int:
-        
         c=0
         prev=nums[0]
         for i in range(1,len(nums)-1):
