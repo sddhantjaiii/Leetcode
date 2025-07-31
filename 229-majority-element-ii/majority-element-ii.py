@@ -5,11 +5,9 @@ class Solution:
         l=len(nums)
         r=[]
         n=l/3
-        s=set(nums)
-        for i in s:
-            x=i
-            if c[x]>n:
-                r.append(x)
+        for i in c:
+            if c[i]>n:
+                r.append(i)
         return r
 
         
