@@ -6,7 +6,7 @@ class Solution:
         for i in fruits:
             for j in range(l):
                 if i<=baskets[j] and r[j]==0:
-                    r[j]=1
+                    baskets[j]=0
                     c+=1
                     break
         return l-c
