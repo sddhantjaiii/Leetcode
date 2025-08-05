@@ -6,9 +6,9 @@ class Solution:
         for i in fruits:
             if i>m:
                 continue
-            for j in range(l):
-                if i<=baskets[j]:
-                    baskets[j]=0
+            for j in baskets:
+                if i<=j:
+                    baskets.remove(j)
                     c+=1
                     break
         return l-c
