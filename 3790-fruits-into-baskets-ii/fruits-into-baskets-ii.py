@@ -8,7 +8,6 @@ class Solution:
                     r[j]=1
                     c+=1
                     break
-        print(r)
         return len(baskets)-c
                 
             
