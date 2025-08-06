@@ -13,7 +13,6 @@ class Solution:
         x,y=0,0
         c=0
         flag=False
-        print(r)
         for i in r:
             if i==1:
                 y=c
@@ -21,7 +20,6 @@ class Solution:
             elif i==2:
                 temp=[x,y+1]
                 x=c+1
-                
                 if flag:
                     fr.append(temp)
                     flag=False
