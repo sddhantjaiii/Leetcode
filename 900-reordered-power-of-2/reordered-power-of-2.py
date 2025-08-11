@@ -1,11 +1,20 @@
+from itertools import permutations 
 class Solution:
     def reorderedPowerOf2(self, n: int) -> bool:
-        def count_digits(x):
-            return ''.join(sorted(str(x)))
-
-        target = count_digits(n)
         
-        for i in range(31):
-            if count_digits(1 << i) == target:
+        l=len(str(n))
+        print(l)
+        for perm in permutations (str(n),l):
+            if perm[0]=='0':
+                continue
+            r="".join(perm)
+            b=bin(int(r))
+            b=str(b)
+            x="0"+b[3:]
+            if int(x,2)==0:
                 return True
         return False
+
+
+
+        
