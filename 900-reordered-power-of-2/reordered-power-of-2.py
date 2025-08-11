@@ -3,7 +3,6 @@ class Solution:
     def reorderedPowerOf2(self, n: int) -> bool:
         
         l=len(str(n))
-        print(l)
         for perm in permutations (str(n),l):
             if perm[0]=='0':
                 continue
