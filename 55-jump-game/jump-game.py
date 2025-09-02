@@ -1,5 +1,5 @@
 class Solution:
-    def canJump(self, nums: List[int]) -> bool:
+    def canJump(self,nums):
         max_reachable = 0
         for i, jump in enumerate(nums):
             if i > max_reachable:
