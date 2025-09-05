@@ -3,8 +3,9 @@ class Solution:
         a=nums[0]
         temp=1
         temp1=1
-        for i in range(len(nums)):
-            j=len(nums)-i-1
+        l=len(nums)
+        for i in range(l):
+            j=l-i-1
             if temp==0:
                 temp=1
             if temp1==0:
