@@ -7,9 +7,7 @@ class Solution:
             xx-=1
             if left==right:
                 return -1
-            print(mid,left,right)
             if nums[mid]>nums[mid+1]:
-                print(mid+1)
                 return mid 
             if nums[mid]<nums[mid+1] and nums[mid]>m:
                 m=max(nums[mid+1],m)
@@ -26,7 +24,6 @@ class Solution:
         x=abs(nums[0]-nums[1])
         f=binarysearch(0,len(nums)-1,m,xx)
         newarr=nums[f+1:]+nums[:f+1]
-        print(f,newarr)
 
 
 
@@ -38,7 +35,6 @@ class Solution:
         def bs(x,left,right):
             x-=1
             mid=(left+right)//2
-            print(mid,left,right,"heloo")
             if x<=-5:
                 return -1
             if target==newarr[mid]:
@@ -48,7 +44,6 @@ class Solution:
             else:
                 return bs(x,mid+1,right)
         meow=bs(x,0,len(nums)-1)
-        print(meow,f+1,len(nums)-1)
         if meow==-1:
             return -1
         y=(meow+f+1+len(nums))%len(nums)
