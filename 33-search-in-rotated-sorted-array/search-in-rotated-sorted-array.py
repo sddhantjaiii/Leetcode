@@ -6,9 +6,9 @@ class Solution:
             mid=(left+right)//2
             
             if left==right:
-                return -1
+                return 0
             if nums[mid]>nums[mid+1]:
-                return mid 
+                return mid +1
             if nums[mid]<nums[mid+1] and nums[mid]>m:
                 m=max(nums[mid+1],m)
                 return binarysearch(mid+1,right,m)
@@ -24,25 +24,25 @@ class Solution:
 
 
         f=binarysearch(0,len(nums)-1,m)
-        newarr=nums[f+1:]+nums[:f+1]
+        newarr=nums[f:]+nums[:f]
         x=len(nums)**(0.5)
-        def bs(x,left,right):
-            x-=1
+        def bs(left,right):
+            
             mid=(left+right)//2
-            print(left,right)
+            print(left,right,newarr)
             
             if target==newarr[mid]:
                 return mid
             if left==right:
                 return -1
             if newarr[mid]>target:
-                return bs(x,left,mid)
+                return bs(left,mid)
             else:
-                return bs(x,mid+1,right)
+                return bs(mid+1,right)
             
-        meow=bs(x,0,len(nums)-1)
+        meow=bs(0,len(nums)-1)
         if meow==-1:
             return -1
-        y=(meow+f+1+len(nums))%len(nums)
+        y=(meow+f+len(nums))%len(nums)
         
         return abs(y)
