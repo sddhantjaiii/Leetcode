@@ -27,9 +27,7 @@ class Solution:
         newarr=nums[f:]+nums[:f]
         x=len(nums)**(0.5)
         def bs(left,right):
-            
             mid=(left+right)//2
-            print(left,right,newarr)
             
             if target==newarr[mid]:
                 return mid
