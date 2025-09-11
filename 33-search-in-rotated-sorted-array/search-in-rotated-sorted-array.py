@@ -24,13 +24,6 @@ class Solution:
         x=abs(nums[0]-nums[1])
         f=binarysearch(0,len(nums)-1,m,xx)
         newarr=nums[f+1:]+nums[:f+1]
-
-
-
-
-
-
-
         x=len(nums)**(0.5)
         def bs(x,left,right):
             x-=1
