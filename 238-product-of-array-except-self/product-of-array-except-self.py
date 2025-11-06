@@ -4,8 +4,8 @@ class Solution:
         r=[]
         for j,i in enumerate(nums):
             if i==0:
-                x=nums[:j]+nums[j+1:]
-                f=prod(x)
+                
+                f=prod(nums[:j]+nums[j+1:])
                 r.append(f)
                 continue
             r.append(m//i)
