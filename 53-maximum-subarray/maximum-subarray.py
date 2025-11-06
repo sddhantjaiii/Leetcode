@@ -1,12 +1,16 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        sum_window = max_window = nums[0]
-
-        for num in nums[1:]:
-            if sum_window < 0:
-                sum_window = num
+        y=max(nums)
+        if y<0:
+            return y
+        m=0
+        k=0
+        for i in nums:
+            x=k+i
+            if x<0:
+                k=0
             else:
-                sum_window += num
-            if sum_window > max_window:
-                max_window = sum_window
-        return max_window
+                k+=i
+            m=max(k,m)
+        return m
+        
