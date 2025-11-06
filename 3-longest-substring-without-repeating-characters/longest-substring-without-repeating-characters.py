@@ -15,7 +15,6 @@ class Solution:
                 while s[l]!=s[r]:
                     c.discard(s[l])
                     l+=1
-                    
                 while s[l]==s[r] and l<r:
                     l+=1
                 c.discard(s[r])
