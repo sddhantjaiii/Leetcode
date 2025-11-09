@@ -6,7 +6,6 @@ class Solution:
         for i in range(l-1,-1,-1):
             if s[i]==" ":
                 if t== "":
-                    t=""
                     continue
                 r=r+t[::-1]+" "
                 t=""
