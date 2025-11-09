@@ -11,7 +11,6 @@ class Solution:
                     x.append(i)
             else:
                 stack.pop()
-                
                 if len(stack)>0:
                     x.append(i)
                 if len(stack) == 0:
