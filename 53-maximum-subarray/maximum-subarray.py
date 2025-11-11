@@ -6,11 +6,9 @@ class Solution:
         m=0
         k=0
         for i in nums:
-            x=k+i
-            if x<0:
+            k+=i
+            m=max(m,k)
+            if k<0:
                 k=0
-            else:
-                k+=i
-            m=max(k,m)
         return m
         
