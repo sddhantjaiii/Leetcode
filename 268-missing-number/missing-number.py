@@ -1,6 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        s=set(nums)
-        for i in range(max(nums)+5):
-            if i not in s:
-                return i
+        x1=0
+        x2=0
+        for i in range(len(nums)):
+            x1=x1^(i+1)
+            x2=x2^(nums[i])
+        return x1^x2
