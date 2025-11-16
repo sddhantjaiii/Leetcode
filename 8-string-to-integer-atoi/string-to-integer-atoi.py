@@ -1,43 +1,31 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
-        l=len(s)
-        c=1
-        r="0"
-        see=0
-        xx=0
-        k=["1","2","3","4","5","6","7","8","9","0"]
-        for i in range(0,l):
-            print(i,s[i])
-            if s[i]==" ":
-                if xx==1:
-                    break
-                continue
-            if s[i]=="-":
-                if xx==1:
-                    break
-                xx=1
-                c=-1
-                see+=2
-                continue
-            elif s[i]=="+" :
-                if xx==1:
-                    break
-                xx=1
-                c=1
-                see+=2
-                continue
-            if  (s[i]) not in k:
+        s=s.strip()
+        r=""
+        flag=False
+        for i in range(len(s)):
+            if (s[i]=="-" or s[i]=="+" )and i!=0:
                 break
-            print(i,s[i])
-            if see>3:
+            if 48<=ord(s[i])<=57 or s[i]=="-" or s[i]=="+":
+                if ord(s[i])==48:
+                    if not flag:
+                        continue
+                if 48<ord(s[i])<=57:
+                    flag=True
+                
+                r+=s[i]
+            else:
                 break
-            xx=1
-            r+=s[i]
-        print(r,l)
-        r1=int(r)
-        q=2**31
-        if r1>=q and c==1:
-            return int(q)-1
-        if r1>q and c==-1:
-            return c*(int(q))
-        return int(r)*c
+        if len(r)==0:
+            return 0
+        print(r)
+        if "-" in r and "+" in r:
+            return 0
+        if len(r)==1 and (r[0]=="-" or r[0]=="+"):
+            return 0
+        
+        if int(r)>2**31 -1:
+            return 2**31-1
+        elif int(r)<2**31*-1:
+            return 2**31*-1
+        return int(r)
