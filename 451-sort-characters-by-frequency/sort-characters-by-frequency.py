@@ -14,22 +14,13 @@
 
         return r"""
 from collections import Counter
-
 class Solution:
     def frequencySort(self, s: str) -> str:
         
         c = Counter(s)
         items = list(c.items())
-        
-        def sort_key(item):
-            character, frequency = item
-            return -frequency  
-
-        items.sort(key=sort_key)
+        items.sort(key=lambda item:item[1], reverse=True)
         result=""
         for character, frequency in items:
             result+=(character * frequency)
-
-        
-
         return result
