@@ -1,7 +1,6 @@
 class Solution:
     def maxDepth(self, s: str) -> int:
         from collections import deque
-        
         m=0
         r=0
         for i in s:
