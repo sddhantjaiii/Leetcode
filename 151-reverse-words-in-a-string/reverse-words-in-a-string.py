@@ -1,16 +1,20 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        l=len(s)
+        s=s.strip()
+        print(s)
         r=""
+        l=len(s)
         t=""
+        r="  "+r
+        
         for i in range(l-1,-1,-1):
             if s[i]==" ":
-                if t== "":
-                    continue
-                r=r+t[::-1]+" "
+                r=r.strip()
+                t=t.strip()
+                r+=" "+t
                 t=""
-            else:
-                t+=s[i]
-                
-        r+=t[::-1]
+            t=s[i]+t
+        t=t.strip()
+        r=r.strip()
+        r=r+" "+t
         return r.strip()
