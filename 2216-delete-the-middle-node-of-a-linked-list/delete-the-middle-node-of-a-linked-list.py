@@ -11,7 +11,7 @@ class Solution:
             if not fast.next:
                 slow.next=slow.next.next
                 return head
-            if fast.next.next==None:
+            if not fast.next.next:
                 slow.next=slow.next.next
                 return head
             slow=slow.next
