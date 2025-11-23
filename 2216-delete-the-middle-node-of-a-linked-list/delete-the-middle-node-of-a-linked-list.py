@@ -12,7 +12,6 @@ class Solution:
                 slow.next=slow.next.next
                 return head
             if fast.next.next==None:
-                
                 slow.next=slow.next.next
                 return head
             slow=slow.next
