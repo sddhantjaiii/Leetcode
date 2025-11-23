@@ -10,9 +10,7 @@ class Solution:
         while fast:
             if not fast.next:
                 slow.next=slow.next.next
-                print("meow")
                 return head
-            print(slow.val,fast.val)
             if fast.next.next==None:
                 
                 slow.next=slow.next.next
