@@ -9,10 +9,9 @@ class Solution:
         s=set()
         s1=set()
         while headA or headB:
-            if headA:
-                s.add(headA)
-            if headB:
-                s1.add(headB)
+            s.add(headA)
+            
+            s1.add(headB)
             if headA in s1 :
                 return headA
             if headB in s:
