@@ -12,10 +12,7 @@ class Solution:
             else:
                 a.append(secret[i])
                 b.append(guess[i])
-        from collections import Counter
-        a.sort()
-        b.sort()
-        for i in range(len(secret)-x):
+        for i in range(len(a)):
             if a[i] in b:
                 y+=1
                 b.remove(a[i])
