@@ -1,10 +1,7 @@
 function createCounter(n: number): () => number {
-    let x=-1
+    
     return function() {
-         x=x+1
-        return n+x
-
-       
+        return n++
     }
 }
 
